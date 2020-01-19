@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{6CD4AC12-9923-45A3-A022-CB1FA197359A}</ProjectGuid>
+    <RootNamespace>CollisionDetection</RootNamespace>
+    <ProjectName>Assignment V1.0</ProjectName>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>$(ProjectDir)glut-3.7.6-bin;$(ProjectDir)SDL\image_include;$(ProjectDir)SDL\include;$(ProjectDir)SDL\mixer_include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(ProjectDir)glut-3.7.6-bin;$(ProjectDir)SDL;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <EntryPointSymbol>mainCRTStartup</EntryPointSymbol>
+      <SetChecksum>true</SetChecksum>
+      <SubSystem>Console</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="3dsLoader.h" />
+    <ClInclude Include="AIController.h" />
+    <ClInclude Include="Collectable.h" />
+    <ClInclude Include="Collision.h" />
+    <ClInclude Include="Commons.h" />
+    <ClInclude Include="Constants.h" />
+    <ClInclude Include="GameCompleteL1Screen.h" />
+    <ClInclude Include="GameCompleteL2Screen.h" />
+    <ClInclude Include="GameOverScreen.h" />
+    <ClInclude Include="GameScreen.h" />
+    <ClInclude Include="GameScreenLevel1.h" />
+    <ClInclude Include="GameScreenLevel2.h" />
+    <ClInclude Include="GameScreenManager.h" />
+    <ClInclude Include="InfoScreen.h" />
+    <ClInclude Include="InputManager.h" />
+    <ClInclude Include="MainMenu.h" />
+    <ClInclude Include="object3DS.h" />
+    <ClInclude Include="Sound.h" />
+    <ClInclude Include="Teapot.h" />
+    <ClInclude Include="Texture.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="3dsLoader.cpp" />
+    <ClCompile Include="AIController.cpp" />
+    <ClCompile Include="Collectable.cpp" />
+    <ClCompile Include="GameCompleteL1Screen.cpp" />
+    <ClCompile Include="GameCompleteL2Screen.cpp" />
+    <ClCompile Include="GameOverScreen.cpp" />
+    <ClCompile Include="GameScreen.cpp" />
+    <ClCompile Include="GameScreenLevel1.cpp" />
+    <ClCompile Include="GameScreenLevel2.cpp" />
+    <ClCompile Include="GameScreenManager.cpp" />
+    <ClCompile Include="InfoScreen.cpp" />
+    <ClCompile Include="InputManager.cpp" />
+    <ClCompile Include="MainMenu.cpp" />
+    <ClCompile Include="object3DS.cpp" />
+    <ClCompile Include="Sound.cpp" />
+    <ClCompile Include="Source.cpp" />
+    <ClCompile Include="Teapot.cpp" />
+    <ClCompile Include="Texture.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="SDL\SDL2.lib" />
+    <Library Include="SDL\SDL2main.lib" />
+    <Library Include="SDL\SDL2_image.lib" />
+    <Library Include="SDL\SDL2_mixer.lib" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
